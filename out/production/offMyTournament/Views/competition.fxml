@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="panevoid"
+            fx:controller="Controllers.AccueilController"
+            stylesheets="Stylesheets/style.css"
+            spacing="10"
+            prefHeight="768.0" prefWidth="1024.0">
+    <fx:include source="topBar.fxml"/>
+    <HBox
+            styleClass="box-bordered-border"
+            spacing="15">
+        <Button prefWidth="200" mnemonicParsing="false" text="Classement" />
+        <Button prefWidth="200" mnemonicParsing="false" text="Matchs" />
+        <Button prefWidth="200" mnemonicParsing="false" text="Statistiques"/>
+    </HBox>
+    <StackPane
+        styleClass="box-bordered-border">
+        <VBox>
+
+        </VBox>
+    </StackPane>
+
+
+</VBox>
+
+        <!--fx:controller="Views.Accueil"-->

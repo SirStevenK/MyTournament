@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?scenebuilder-stylesheet Stylesheets/style.css?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:id="pane"
+            fx:controller="Controllers.MainController"
+            stylesheets="Stylesheets/style.css"
+            alignment="CENTER"
+            spacing="8"
+            prefHeight="768.0" prefWidth="1024.0">
+    <children>
+        <Button prefWidth="180" mnemonicParsing="false" text="Créer un Championnat" onAction="#createChampionnat" />
+        <Button prefWidth="180" mnemonicParsing="false" text="Créer un Tournoi" />
+        <Button prefWidth="180" mnemonicParsing="false" text="Ouvrir une Compétition" onAction="#openCompetition" />
+    </children>
+</VBox>

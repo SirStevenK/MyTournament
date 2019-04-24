@@ -1,0 +1,77 @@
+#pane {
+    -fx-background-image: url("../background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+}
+
+#panevoid {
+    -fx-background-image: url("../backgroundVoid.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: center center;
+    -fx-padding: 10 10 10 10;
+}
+
+.box-bordered-border {
+    -fx-content-display: top;
+    -fx-background-color: #d2dae2;
+    -fx-padding: 15 15 15 15;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+}
+
+.box-bordered-title {
+    -fx-background-color: #d2dae2;
+    -fx-padding: 0 10 0 10;
+    -fx-translate-y: -29;
+}
+
+.low-box-bordered-border {
+    -fx-content-display: top;
+    -fx-background-color: #d2dae2;
+    -fx-padding: 0 15 22 15;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+}
+
+.low-box-bordered-title {
+    -fx-background-color: #d2dae2;
+    -fx-padding: 0 10 0 10;
+    -fx-translate-y: -12;
+}
+
+.bg-gray {
+    -fx-background-color: #d2dae2;
+}
+
+.bg-blue {
+    -fx-background-color: #3c40c6;
+}
+
+.bg-orange {
+    -fx-background-color: #ffa801;
+}
+
+.font-white {
+    -fx-text-fill: white;
+}
+
+.button-enregistrer-team {
+    -fx-background-color: linear-gradient(#575fcf, #3c40c6);
+    -fx-background-insets: 0,1,2,3;
+    -fx-background-radius: 4,4,4,4;
+    -fx-padding: 18 45 18 45;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.button-enregistrer-team:hover {
+    -fx-background-color: linear-gradient(#575fcfcc, #3c40c6cc);
+}
+
+.button-enregistrer-team:pressed {
+    -fx-background-color: linear-gradient(#575fcf, #3c40c6);
+    -fx-border-color: #1e272e;
+    -fx-border-width: 2;
+    -fx-border-radius: 4;
+}

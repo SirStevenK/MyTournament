@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import Components.NumberTextField ?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="panevoid"
+      fx:controller="Controllers.CreateCompetitionController"
+      stylesheets="Stylesheets/style.css"
+      alignment="CENTER"
+      spacing="10"
+      prefHeight="768.0" prefWidth="1024.0">
+       <HBox
+            styleClass="box-bordered-border"
+            spacing="15">
+            <Button prefWidth="150" mnemonicParsing="false" text="Confirmer la compétition" onAction="#confirmerCompetition" />
+            <Button prefWidth="150" mnemonicParsing="false" text="Equipes" onAction="#equipeChange" />
+            <Button prefWidth="150" mnemonicParsing="false" text="Arbitres" onAction="#arbitreChange" />
+            <Button prefWidth="150" mnemonicParsing="false" text="Retour au menu" onAction="#backToMenu" />
+       </HBox>
+       <HBox
+            styleClass="box-bordered-border"
+            spacing="10">
+            <Button prefWidth="150" mnemonicParsing="false" text="Creer" onAction="#creerAction" />
+            <Button prefWidth="150" mnemonicParsing="false" text="Liste" onAction="#listeAction" />
+       </HBox>
+       <StackPane
+            styleClass="box-bordered-border">
+            <HBox
+                fx:id="changeTeam"
+                spacing="20">
+                <VBox
+                    fx:id="leftChangeTeam"
+                    spacing="24">
+                    <StackPane
+                        styleClass="box-bordered-border">
+                        <Label text="Nom de l'équipe" styleClass="box-bordered-title"/>
+                        <TextField promptText="Nom de l'équipe" fx:id="nameEquipe" />
+                    </StackPane>
+                    <VBox
+                        spacing="12"
+                        styleClass="low-box-bordered-border">
+                        <Label text="Entraineur" styleClass="low-box-bordered-title"/>
+                        <StackPane
+                            styleClass="box-bordered-border">
+                            <Label text="Nom de l'entraineur" styleClass="box-bordered-title"/>
+                            <TextField promptText="Nom de l'entraineur" fx:id="nameEntraineur" />
+                        </StackPane>
+                        <StackPane
+                            styleClass="box-bordered-border">
+                            <Label text="Prénom de l'entraineur" styleClass="box-bordered-title"/>
+                            <TextField promptText="Prénom de l'entraineur" fx:id="prenomEntraineur"/>
+                        </StackPane>
+                        <StackPane
+                            styleClass="box-bordered-border">
+                            <Label text="Age de l'entraineur" styleClass="box-bordered-title"/>
+                            <NumberTextField promptText="Age de l'entraineur" fx:id="ageEntraineur"/>
+                        </StackPane>
+                        <StackPane
+                            styleClass="box-bordered-border">
+                            <Label text="Taille de l'entraineur" styleClass="box-bordered-title"/>
+                            <NumberTextField promptText="Taille de l'entraineur" fx:id="tailleEntraineur"/>
+                        </StackPane>
+                        <StackPane
+                            styleClass="box-bordered-border">
+                            <Label text="Nation de l'entraineur" styleClass="box-bordered-title"/>
+                            <ChoiceBox fx:id="nationEntraineur" value="France">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="France" />
+                                        <String fx:value="Angleterre" />
+                                        <String fx:value="Espagne" />
+                                        <String fx:value="Italie" />
+                                    </FXCollections>
+                                </items>
+                            </ChoiceBox>
+                        </StackPane>
+                    </VBox>
+                    <StackPane>
+                        <Button styleClass="button-enregistrer-team" mnemonicParsing="false" text="Enregistrer l'équipe" onAction="#enregistrerEquipe" />
+                    </StackPane>
+                </VBox>
+                <ScrollPane
+                    fx:id="scrollCenterCreateTeam"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED">
+                    <FlowPane
+                        fx:id="centerCreateTeam"
+                        vgap="8"
+                        hgap="8"
+                        styleClass="bg-gray"
+                        prefWidth="500">
+                    </FlowPane>
+                </ScrollPane>
+                <VBox
+                    fx:id="rightChangeTeam">
+                    <VBox
+                            spacing="12"
+                            styleClass="low-box-bordered-border">
+                        <Label text="Joueur" styleClass="low-box-bordered-title"/>
+                        <StackPane
+                                styleClass="box-bordered-border">
+                            <Label text="Nom du joueur" styleClass="box-bordered-title"/>
+                            <TextField promptText="Nom du joueur" fx:id="nameJoueur"/>
+                        </StackPane>
+                        <StackPane
+                                styleClass="box-bordered-border">
+                            <Label text="Prénom du joueur" styleClass="box-bordered-title"/>
+                            <TextField promptText="Prénom du joueur" fx:id="prenomJoueur"/>
+                        </StackPane>
+                        <StackPane
+                                styleClass="box-bordered-border">
+                            <Label text="Age du joueur" styleClass="box-bordered-title"/>
+                            <NumberTextField promptText="Age du joueur" fx:id="ageJoueur"/>
+                        </StackPane>
+                        <StackPane
+                                styleClass="box-bordered-border">
+                            <Label text="Taille du joueur" styleClass="box-bordered-title"/>
+                            <NumberTextField promptText="Taille du joueur" fx:id="tailleJoueur"/>
+                        </StackPane>
+                        <StackPane
+                                styleClass="box-bordered-border">
+                            <Label text="Nation du joueur" styleClass="box-bordered-title"/>
+                            <ChoiceBox fx:id="nationJoueur" value="France">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="France" />
+                                        <String fx:value="Angleterre" />
+                                        <String fx:value="Espagne" />
+                                        <String fx:value="Italie" />
+                                    </FXCollections>
+                                </items>
+                            </ChoiceBox>
+                        </StackPane>
+                        <StackPane
+                            styleClass="box-bordered-border">
+                            <Label text="Poste du joueur" styleClass="box-bordered-title"/>
+                            <ChoiceBox fx:id="posteJoueur" value="Gardien">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Gardien" />
+                                        <String fx:value="Defenseur" />
+                                        <String fx:value="Milieu" />
+                                        <String fx:value="Attaquant" />
+                                    </FXCollections>
+                                </items>
+                            </ChoiceBox>
+                        </StackPane>
+                        <VBox
+                            spacing="10"
+                            alignment="CENTER">
+                            <Button prefWidth="150"  mnemonicParsing="false" text="Enregistrer" onAction="#addPlayer" />
+                            <Button fx:id="buttonSupprimerJoueur" prefWidth="150"  mnemonicParsing="false" text="Supprimer" onAction="#removePlayer" />
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </HBox>
+            <ScrollPane
+                    fx:id="listTeams"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED">
+                <FlowPane
+                        fx:id="contentListTeams"
+                        vgap="8"
+                        hgap="8"
+                        styleClass="bg-gray"
+                        prefWidth="500">
+                </FlowPane>
+            </ScrollPane>
+
+            <ScrollPane
+                    fx:id="listArbitres"
+                    hbarPolicy="NEVER"
+                    vbarPolicy="AS_NEEDED">
+                <FlowPane
+                        fx:id="contentListArbitres"
+                        vgap="8"
+                        hgap="8"
+                        styleClass="bg-gray"
+                        prefWidth="500">
+                </FlowPane>
+            </ScrollPane>
+           <VBox
+               fx:id="changeArbitre"
+               spacing="12"
+               maxWidth="300"
+               styleClass="low-box-bordered-border">
+               <Label text="Arbitre" styleClass="low-box-bordered-title"/>
+               <StackPane
+                       styleClass="box-bordered-border">
+                   <Label text="Nom de l'arbitre" styleClass="box-bordered-title"/>
+                   <TextField promptText="Nom de l'arbitre" fx:id="nameArbitre"/>
+               </StackPane>
+               <StackPane
+                       styleClass="box-bordered-border">
+                   <Label text="Prénom de l'arbitre" styleClass="box-bordered-title"/>
+                   <TextField promptText="Prénom de l'arbitre" fx:id="prenomArbitre"/>
+               </StackPane>
+               <StackPane
+                       styleClass="box-bordered-border">
+                   <Label text="Age de l'arbitre" styleClass="box-bordered-title"/>
+                   <NumberTextField promptText="Age de l'arbitre" fx:id="ageArbitre"/>
+               </StackPane>
+               <StackPane
+                       styleClass="box-bordered-border">
+                   <Label text="Taille de l'arbitre" styleClass="box-bordered-title"/>
+                   <NumberTextField promptText="Taille de l'arbitre" fx:id="tailleArbitre"/>
+               </StackPane>
+               <StackPane
+                   styleClass="box-bordered-border">
+                   <Label text="Nation de l'arbitre" styleClass="box-bordered-title"/>
+                   <ChoiceBox fx:id="nationArbitre" value="France">
+                       <items>
+                           <FXCollections fx:factory="observableArrayList">
+                               <String fx:value="France" />
+                               <String fx:value="Angleterre" />
+                               <String fx:value="Espagne" />
+                               <String fx:value="Italie" />
+                           </FXCollections>
+                       </items>
+                   </ChoiceBox>
+               </StackPane>
+               <VBox
+                       spacing="10"
+                       alignment="CENTER">
+                   <Button prefWidth="150"  mnemonicParsing="false" text="Enregistrer" onAction="#addArbitre" />
+                   <Button fx:id="buttonSupprimerArbitre" prefWidth="150"  mnemonicParsing="false" text="Supprimer" onAction="#removeArbitre" />
+               </VBox>
+           </VBox>
+       </StackPane>
+</VBox>
