@@ -75,3 +75,8 @@
     -fx-border-width: 2;
     -fx-border-radius: 4;
 }
+
+.title-box {
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
+}

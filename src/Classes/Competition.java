@@ -28,6 +28,10 @@ public class Competition implements Serializable {
         return -1;
     }
 
+    public int get_nombre_tour() {
+        return this.nombre_tour;
+    }
+
     public ArrayList<Match> get_list_matchs() {
         return this.list_matchs;
     }
@@ -50,6 +54,7 @@ public class Competition implements Serializable {
 
     public void add_equipe(Equipe equipe) {
         this.list_equipes.add(equipe);
+        equipe.set_competition(this);
     }
 
     public void add_joueur(Joueur joueur) {
@@ -99,6 +104,7 @@ public class Competition implements Serializable {
         for (Match match : this.list_matchs) {
             if (match.get_tour() == tour) list_match_of_tour.add(match);
         }
+        System.out.println(list_match_of_tour.size());
         return list_match_of_tour;
     }
 }

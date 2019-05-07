@@ -37,7 +37,7 @@ public class Match implements Serializable  {
     }
 
     public Equipe get_equipe2() {
-        return this.equipe1;
+        return this.equipe2;
     }
 
     public void set_equipe2(Equipe equipe) {

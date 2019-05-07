@@ -6,26 +6,90 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:id="panevoid"
-            fx:controller="Controllers.AccueilController"
-            stylesheets="Stylesheets/style.css"
-            spacing="10"
-            prefHeight="768.0" prefWidth="1024.0">
-    <fx:include source="topBar.fxml"/>
+      xmlns:fx="http://javafx.com/fxml"
+      fx:id="panevoid"
+      fx:controller="Controllers.CompetitionController"
+      stylesheets="Stylesheets/style.css"
+      spacing="10"
+      prefHeight="768.0" prefWidth="1024.0">
+    <fx:include source="../Components/topBar.fxml"/>
     <HBox
             styleClass="box-bordered-border"
             spacing="15">
-        <Button prefWidth="200" mnemonicParsing="false" text="Classement" />
-        <Button prefWidth="200" mnemonicParsing="false" text="Matchs" />
+        <Button prefWidth="200" mnemonicParsing="false" text="Classement" onAction="#classementState" />
+        <Button prefWidth="200" mnemonicParsing="false" text="Matchs" onAction="#calendrierState" />
         <Button prefWidth="200" mnemonicParsing="false" text="Statistiques"/>
     </HBox>
     <StackPane
         styleClass="box-bordered-border">
-        <VBox>
+            <VBox
+                fx:id="classementBox">
+                <Label text="Classement" styleClass="title-box" />
+            </VBox>
+            <VBox
+                fx:id="calendrierBox">
+                <Label text="Calendrier" styleClass="title-box" />
+                <Label fx:id="journee"/>
+                <HBox>
+                    <Button prefWidth="150" mnemonicParsing="false" text="Précédente" onAction="#prevTour" />
+                    <Button prefWidth="150" mnemonicParsing="false" text="Suivante" onAction="#nextTour" />
+                </HBox>
+            </VBox>
+            <VBox
+                fx:id="matchBox">
+                <Button mnemonicParsing="false" text="Retour au calendrier"  />
+                <VBox>
+                    <HBox
+                        spacing="20">
+                        <Label fx:id="nomE1" text="Equipe 1"/>
+                        <Label fx:id="scoreLabel" text="   -   "/>
+                        <Label fx:id="nomE2" text="Equipe 2"/>
+                    </HBox>
 
-        </VBox>
+                    <StackPane
+                            fx:id="listEvent"></StackPane>
+                    <VBox
+                        styleClass="box-bordered-border">
+                        <Label text="Ajouter un Evenement" />
+                        <HBox>
+                            <fx:define>
+                                <ToggleGroup  fx:id="Event" />
+                            </fx:define>
+                            <RadioButton toggleGroup="$Event" text="But" />
+                            <RadioButton toggleGroup="$Event" text="Hors-Jeu" />
+
+                            <RadioButton toggleGroup="$Event" text="Carton Jaune" />
+                            <RadioButton toggleGroup="$Event" text="Carton Rouge" />
+
+                            <RadioButton toggleGroup="$Event" text="Entrée" />
+                            <RadioButton toggleGroup="$Event" text="Sortie" />
+                        </HBox>
+                        <ChoiceBox fx:id="equipeEvent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Equipe 1"  />
+                                    <String fx:value="Equipe 2" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                        <ChoiceBox fx:id="joueurEvent">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Joueur 1" />
+                                    <String fx:value="Joueur 2" />
+                                </FXCollections>
+                            </items>
+                        </ChoiceBox>
+                        <Button prefWidth="150" mnemonicParsing="false" text="Ajouter" onAction="#test"/>
+                    </VBox>
+                    <HBox>
+                        <Label text="Match Joué ?"/>
+                        <CheckBox fx:id="oui" text=""/>
+                    </HBox>
+                </VBox>
+            </VBox>
     </StackPane>
 
 

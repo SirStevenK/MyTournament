@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<HBox
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="Controllers.TopBarController"
+    styleClass="box-bordered-border"
+    spacing="15">
+    <Button fx:id="Competition" prefWidth="136" mnemonicParsing="false" text="Competition" />
+    <Button fx:id="Equipes" prefWidth="136" mnemonicParsing="false" text="Equipes" />
+    <Button fx:id="Joueurs" prefWidth="136" mnemonicParsing="false" text="Joueurs"/>
+    <Button fx:id="Arbitres" prefWidth="136" mnemonicParsing="false" text="Arbitres" />
+    <Button fx:id="Enregistrer" prefWidth="136" mnemonicParsing="false" text="Enregistrer Sous" />
+    <Button fx:id="Menu" prefWidth="136" mnemonicParsing="false" text="Retour au menu" onAction="#backToMenu" />
+</HBox>

@@ -17,7 +17,7 @@ public class Championnat extends Competition implements Serializable {
         int nombre_equipe = this.list_equipes.size();
         this.nombre_tour = nombre_equipe - 1;
         ArrayList<Match> list_matchs = new ArrayList<>();
-        int round = 1;
+        int round = 0;
 
         for (int i = 0; i < nombre_equipe - 1; i++) {
             ArrayList<Integer> tab = new ArrayList<>();

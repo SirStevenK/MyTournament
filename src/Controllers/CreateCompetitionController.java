@@ -340,7 +340,9 @@ public class CreateCompetitionController {
         entraineur.set_taille(Integer.valueOf(tailleEntraineur.getText()));
         entraineur.set_nation((String) nationEntraineur.getValue());
 
-        if (!competition.has_equipe(selectedTeam)) competition.add_equipe(selectedTeam);
+        if (!competition.has_equipe(selectedTeam)) {
+            competition.add_equipe(selectedTeam);
+        }
         typeAction = "Liste";
         selectedTeam = null;
         show();
